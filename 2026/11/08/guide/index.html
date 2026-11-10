@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f7f3ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#131110" media="(prefers-color-scheme: dark)">
+  <title>使用说明：怎么写、怎么改、怎么发布 · 溪河里</title>
+  <meta name="description" content="从文档格式、分类标签，到页面布局、主题修改和部署上线，这个站的使用说明都在这篇里。">
+  <meta name="author" content="rxzhou">
+  <link rel="canonical" href="https://xiheli.github.io/2026/11/08/guide/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="使用说明：怎么写、怎么改、怎么发布 · 溪河里">
+  <meta property="og:description" content="从文档格式、分类标签，到页面布局、主题修改和部署上线，这个站的使用说明都在这篇里。">
+  <meta property="og:url" content="https://xiheli.github.io/2026/11/08/guide/">
+  <meta property="og:site_name" content="溪河里">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png?v=3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png?v=3">
+  <script>
+    (function () {
+      try {
+        var key = 'chronicle-theme';
+        var stored = null;
+        try { stored = localStorage.getItem(key); } catch (e) { stored = null; }
+        var match = /[?&]theme=(dark|light)/.exec(location.search);
+        var theme = (match && match[1]) || stored;
+        if (!theme) {
+          theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="is-post">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="masthead" id="masthead">
+  <div class="wrap masthead-inner">
+    <a class="brand" href="/" aria-label="溪河里 首页">
+      
+      <img class="brand-mark brand-mark--image" src="/img/logo.jpg" alt="" width="36" height="36">
+      
+      <span class="brand-text">
+        <span class="brand-name">溪河里</span>
+        <span class="brand-tag">记录 · 思考 · 复盘</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      
+      <a class="nav-link is-active" href="/" aria-current="page">日志流</a>
+      
+      <a class="nav-link" href="/categories/">分类</a>
+      
+      <a class="nav-link" href="/tags/">标签</a>
+      
+      <a class="nav-link" href="/archives/">归档</a>
+      
+      <a class="nav-link" href="/about/">关于</a>
+      
+    </nav>
+
+    <div class="masthead-actions">
+      
+      <button class="search-trigger" id="search-open" type="button" aria-label="搜索记录" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.6 16.6 4.2 4.2"/></svg>
+        <span class="search-trigger-text">搜索</span>
+        <kbd class="search-trigger-kbd">Ctrl K</kbd>
+      </button>
+      
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="切换深浅色模式" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2Z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <main id="main">
+    
+<div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+
+<article class="post">
+  <header class="post-head">
+    <div class="wrap">
+      <nav class="post-crumb" aria-label="面包屑">
+        <a href="/">日志流</a>
+        
+        <span aria-hidden="true">/</span>
+        <a href="/categories/%E7%AB%99%E7%82%B9%E6%8C%87%E5%8D%97/">站点指南</a>
+        
+        
+      </nav>
+
+      <div class="post-kicker">
+        
+        <a class="cat-badge" href="/categories/%E7%AB%99%E7%82%B9%E6%8C%87%E5%8D%97/" style="--c:#3f51b5;--c-d:#a3b0ff;--c-bg:rgba(63, 81, 181, 0.1);--c-bg-d:rgba(163, 176, 255, 0.16)"><span class="cat-dot" aria-hidden="true"></span>站点指南</a>
+        
+        <span class="pin-badge">置顶</span>
+      </div>
+
+      <h1 class="post-title">使用说明：怎么写、怎么改、怎么发布</h1>
+      <p class="post-lede">从文档格式、分类标签，到页面布局、主题修改和部署上线，这个站的使用说明都在这篇里。</p>
+
+      <div class="post-meta">
+        <time datetime="2026-11-08T14:30:00.000Z">2026-11-08 · 周日</time>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span>约 4 分钟</span>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span>1424 字</span>
+        
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="post-layout">
+      <div class="post-main">
+        <div class="post-content" id="post-content">
+          <p>这篇是给自己（和偶尔来帮忙的朋友）看的操作手册：怎么加一条记录、分类怎么分、页面和主题怎么改、最后怎么发布出去。</p>
+<h2 id="一分钟上手"><a href="#一分钟上手" class="headerlink" title="一分钟上手"></a>一分钟上手</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm.cmd run server                     <span class="comment"># 本地预览 http://localhost:4000</span></span><br><span class="line">npm.cmd run <span class="built_in">log</span> -- <span class="string">&quot;今天的标题&quot;</span>        <span class="comment"># 新建一条记录</span></span><br><span class="line">npm.cmd run build                      <span class="comment"># 生成到 public/</span></span><br><span class="line">npm.cmd run deploy                     <span class="comment"># 发布到 GitHub Pages</span></span><br></pre></td></tr></table></figure>
+
+<p>站点结构：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">blog/</span><br><span class="line">├─ source/_posts/      # 所有记录（Markdown）</span><br><span class="line">├─ source/about/       # 关于页</span><br><span class="line">├─ themes/chronicle/   # 主题（模板 / 样式 / 脚本）</span><br><span class="line">├─ _config.yml         # 站点配置</span><br><span class="line">└─ _config.chronicle.yml  # 主题配置</span><br></pre></td></tr></table></figure>
+
+<h2 id="支持哪些文档格式"><a href="#支持哪些文档格式" class="headerlink" title="支持哪些文档格式"></a>支持哪些文档格式</h2><p><strong>文章主体是 Markdown（<code>.md</code>）</strong>，一篇一个文件，放在 <code>source/_posts/</code> 下。</p>
+<p>正文里可以直接用：</p>
+<ul>
+<li>标题、列表、表格、引用、分割线</li>
+<li>行内代码和代码块（带语法高亮、可一键复制）</li>
+<li>图片：<code>png</code> &#x2F; <code>jpg</code> &#x2F; <code>jpeg</code> &#x2F; <code>gif</code> &#x2F; <code>webp</code> &#x2F; <code>svg</code></li>
+<li>普通链接、锚点链接</li>
+<li>少量 HTML，比如 <code>&lt;details&gt;</code> 折叠块、<code>&lt;audio&gt;</code>、<code>&lt;video&gt;</code></li>
+</ul>
+<p>图片的用法（推荐放在 <code>source/img/</code>）：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">截图</span>](<span class="link">/img/example.png</span>)</span><br></pre></td></tr></table></figure>
+
+<p>不支持的情况：</p>
+<ul>
+<li><strong>Word &#x2F; PDF 不能直接当文章</strong>。要么转成 Markdown，要么把文件放进 <code>source/</code> 当作附件，用链接指向它。</li>
+<li>数学公式、流程图（Mermaid）默认没有开启，需要额外装 Hexo 插件；需要的话再说。</li>
+<li>视频不建议直接放进仓库，用外链更省空间。</li>
+</ul>
+<h2 id="写一条记录"><a href="#写一条记录" class="headerlink" title="写一条记录"></a>写一条记录</h2><ol>
+<li>新建：<code>npm run log -- &quot;标题&quot;</code>，会按模板生成文件，自动填好当前时间。</li>
+<li>填 front matter（文件开头 <code>---</code> 之间的部分）。</li>
+<li>写正文，<code>npm run server</code> 预览。</li>
+<li><code>npm run build &amp;&amp; npm run deploy</code> 发布。</li>
+</ol>
+<p>front matter 字段：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>title</code></td>
+<td>标题</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>发布时间。<strong>这是你写的时间，不是 git 提交时间</strong>，排序、归档、首页日期都用它</td>
+</tr>
+<tr>
+<td><code>categories</code></td>
+<td>分类，见下一节</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td>标签，可以多个</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>卡片和搜索里的一句话摘要，可留空（留空会截取正文）</td>
+</tr>
+<tr>
+<td><code>sticky</code></td>
+<td>置顶权重，数字越大越靠前，比如 <code>sticky: 100</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><code>npm run log</code> 会把创建时的时间写进 <code>date</code>。之后想改时间，直接改这一行就行，不用重新提交。</p>
+</blockquote>
+<h2 id="分类怎么分"><a href="#分类怎么分" class="headerlink" title="分类怎么分"></a>分类怎么分</h2><p><strong>一个分类：</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">学习日志</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>子分类（父 &gt; 子）：</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> [<span class="string">项目记录</span>, <span class="string">主题开发</span>]</span><br></pre></td></tr></table></figure>
+
+<p>注意：YAML 里这个列表本身就是一条层级链，所以下面两种写法效果相同：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">项目记录</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">主题开发</span></span><br></pre></td></tr></table></figure>
+
+<p>它们都会得到「项目记录 &#x2F; 主题开发」这个子分类，页面地址是 <code>/categories/项目记录/主题开发/</code>。</p>
+<p><strong>多个平级分类</strong>（每个方括号是一组）：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> [<span class="string">学习日志</span>]</span><br><span class="line">  <span class="bullet">-</span> [<span class="string">项目记录</span>]</span><br></pre></td></tr></table></figure>
+
+<p>几个已经实现的细节：</p>
+<ul>
+<li>父分类页面会<strong>包含</strong>它下面子分类的文章；子分类有独立页面。</li>
+<li>分类页顶部会列出「子分类」「同级」，可以横向切换。</li>
+<li>子分类沿用父分类的颜色，不用单独配色。</li>
+<li>首页的分类筛选按钮只显示一级分类，但筛选父分类时会把子分类文章一起筛出来。</li>
+<li>新分类不用注册，写进 front matter 就会自动生成页面；想加一句描述，在 <code>_config.chronicle.yml</code> 的 <code>categories</code> 下补一条即可。</li>
+</ul>
+<h2 id="标签怎么加"><a href="#标签怎么加" class="headerlink" title="标签怎么加"></a>标签怎么加</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">CSS</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">笔记</span></span><br></pre></td></tr></table></figure>
+
+<p>标签页（<code>/tags/</code>）和标签云会自动生成；卡片上最多显示 3 个。</p>
+<h2 id="摘要与置顶"><a href="#摘要与置顶" class="headerlink" title="摘要与置顶"></a>摘要与置顶</h2><ul>
+<li><code>description</code> 会显示在首页卡片、搜索结果里，写一句就够。</li>
+<li>想置顶就加 <code>sticky: 100</code>（数字越大越靠前，不写就是普通排序）。</li>
+</ul>
+<h2 id="修改页面内容"><a href="#修改页面内容" class="headerlink" title="修改页面内容"></a>修改页面内容</h2><table>
+<thead>
+<tr>
+<th>想改什么</th>
+<th>改哪里</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>站点标题、副标题、作者、URL</td>
+<td><code>_config.yml</code></td>
+</tr>
+<tr>
+<td>导航、首页文案、分类描述、页脚</td>
+<td><code>_config.chronicle.yml</code></td>
+</tr>
+<tr>
+<td>关于页</td>
+<td><code>source/about/index.md</code></td>
+</tr>
+<tr>
+<td>分类汇总页 &#x2F; 标签汇总页</td>
+<td><code>source/categories/index.md</code>、<code>source/tags/index.md</code></td>
+</tr>
+<tr>
+<td>404 页面</td>
+<td><code>source/404.md</code> + <code>themes/chronicle/layout/404.ejs</code></td>
+</tr>
+<tr>
+<td>头像 &#x2F; Logo</td>
+<td><code>themes/chronicle/source/img/avatar.jpg</code>、<code>logo.jpg</code>（在配置里改路径也可以）；favicon 是 <code>source/favicon.ico</code> 和 <code>themes/chronicle/source/img/favicon-192.png</code></td>
+</tr>
+</tbody></table>
+<p>导航就在 <code>_config.chronicle.yml</code> 的 <code>menu</code> 里加一行，比如：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">日志流:</span> <span class="string">/</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories/</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags/</span></span><br><span class="line">  <span class="string">归档:</span> <span class="string">/archives/</span></span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="修改布局和主题"><a href="#修改布局和主题" class="headerlink" title="修改布局和主题"></a>修改布局和主题</h2><p>模板都在 <code>themes/chronicle/layout/</code>：</p>
+<ul>
+<li><code>layout.ejs</code>：整页外壳（头、尾、搜索框）</li>
+<li><code>index.ejs</code>：首页</li>
+<li><code>post.ejs</code>：文章页</li>
+<li><code>category.ejs</code> &#x2F; <code>categories.ejs</code>：分类页与分类总览</li>
+<li><code>archive.ejs</code>：归档页（按年 + 月分组）</li>
+<li><code>tag.ejs</code> &#x2F; <code>tags.ejs</code>：标签页</li>
+<li><code>_partial/</code>：头部、尾部、侧栏、日志卡片、分页、搜索等组件</li>
+</ul>
+<p>样式在 <code>themes/chronicle/source/css/style.css</code>，颜色和字体集中在文件开头的 <code>:root</code>（深色模式在 <code>[data-theme=&quot;dark&quot;]</code>）。改配色基本只需要动这几个变量。</p>
+<p>交互在 <code>themes/chronicle/source/js/app.js</code>：分类筛选、搜索、目录、代码复制、阅读进度、深浅色切换。</p>
+<p>几个已经有的交互，改布局时留意别破坏：</p>
+<ul>
+<li>首页和列表页的<strong>整张卡片都可以点击</strong>（标题链接上铺了一层透明链接；分类、标签、阅读按钮单独可点）。</li>
+<li>归档页按「年 → 月」分组，点月份可以只看那个月。</li>
+<li>分类页有子分类、同级分类的快捷入口。</li>
+</ul>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>源码和公开页面分开放：</p>
+<ul>
+<li><strong>私有仓库</strong> <code>xiheli/xiheli-blog</code>：<code>source/</code>、<code>themes/</code>、配置和脚本，只有你能看。</li>
+<li><strong>公开仓库</strong> <code>xiheli/xiheli.github.io</code>：只放构建后的 HTML&#x2F;CSS&#x2F;JS，GitHub Pages 从 <code>main</code> 读页面。</li>
+</ul>
+<p>发布：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run deploy</span><br></pre></td></tr></table></figure>
+
+<p><code>deploy</code> 会自动执行 <code>hexo clean</code> → <code>hexo generate</code>，然后把 <code>public/</code> 做成一个<strong>没有父提交的单快照</strong>，强制推送到公开仓库的 <code>main</code>。所以公开仓库永远只有一条提交，看不到之前版本的 HTML diff。</p>
+<blockquote>
+<p>旧提交会从分支上移除，但 GitHub 后台可能还会保留一段时间；要彻底清掉需要删库重建或联系 GitHub Support。</p>
+</blockquote>
+<p>源码备份（私有仓库）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add -A</span><br><span class="line">git commit -m <span class="string">&quot;更新记录&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p>公开仓库不要直接推源码，否则站点根目录没有 <code>index.html</code>，网站会打不开。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ul>
+<li><strong><code>npm</code> 报 “无法加载文件 npm.ps1”</strong>：PowerShell 执行策略限制，用 <code>npm.cmd</code> 代替，或执行 <code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code>。</li>
+<li><strong>日期不对</strong>：检查 <code>_config.yml</code> 的 <code>timezone: Asia/Shanghai</code>，以及文章里的 <code>date</code>。</li>
+<li><strong>改了没生效</strong>：<code>npm run clean &amp;&amp; npm run build</code>，浏览器再强制刷新。</li>
+<li><strong>搜索没更新</strong>：<code>search.json</code> 是构建时生成的，重新构建、部署即可。</li>
+<li><strong>中文分类 URL 很长</strong>：浏览器会把中文编码成 <code>%E9%A1%B9...</code>，属于正常现象。</li>
+<li><strong>想删示例文章</strong>：直接删 <code>source/_posts/</code> 下对应的 <code>.md</code>，重新构建即可。</li>
+</ul>
+<h2 id="文件地图"><a href="#文件地图" class="headerlink" title="文件地图"></a>文件地图</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">blog/</span><br><span class="line">├─ source/</span><br><span class="line">│  ├─ _posts/          # 记录（一篇一个 md）</span><br><span class="line">│  ├─ _drafts/         # 草稿，不渲染</span><br><span class="line">│  ├─ about/index.md   # 关于</span><br><span class="line">│  ├─ categories/index.md</span><br><span class="line">│  ├─ tags/index.md</span><br><span class="line">│  └─ 404.md</span><br><span class="line">├─ themes/chronicle/</span><br><span class="line">│  ├─ layout/          # 模板</span><br><span class="line">│  ├─ scripts/helpers.js   # 分类层级、摘要、字数、归档、搜索索引</span><br><span class="line">│  └─ source/          # style.css / app.js / 图片</span><br><span class="line">├─ _config.yml</span><br><span class="line">├─ _config.chronicle.yml</span><br><span class="line">└─ package.json</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+        <footer class="post-foot">
+          <p class="post-foot-label">标签</p>
+          <ul class="post-foot-tags">
+            
+            <li><a class="tag" href="/tags/%E6%8C%87%E5%8D%97/">#指南</a></li>
+            
+            <li><a class="tag" href="/tags/Hexo/">#Hexo</a></li>
+            
+            <li><a class="tag" href="/tags/%E9%83%A8%E7%BD%B2/">#部署</a></li>
+            
+          </ul>
+        </footer>
+        
+
+        
+        <nav class="post-nav" aria-label="上一篇与下一篇">
+          
+          <a class="post-nav-item" href="/2026/11/08/why-log/" rel="prev">
+            <span class="post-nav-label"><span aria-hidden="true">←</span> 较早一篇</span>
+            <span class="post-nav-title">为什么还要写日志</span>
+          </a>
+          
+          
+          <a class="post-nav-item post-nav-item--next" href="/2026/11/08/log-261108/" rel="next">
+            <span class="post-nav-label">较晚一篇 <span aria-hidden="true">→</span></span>
+            <span class="post-nav-title">log：1108</span>
+          </a>
+          
+        </nav>
+        
+
+        
+        <section class="related">
+          <h2 class="related-title">相关记录</h2>
+          <ul class="related-list">
+            
+            <li>
+              <a href="/2026/11/08/blog-timeline/">
+                <time datetime="2026-11-08T13:40:00.000Z">11.08</time>
+                <span class="related-name">重做博客：把首页换成一条时间轴</span>
+                <span class="related-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/2026/10/30/windows-hexo/">
+                <time datetime="2026-10-30T14:05:00.000Z">10.30</time>
+                <span class="related-name">Windows 上跑 Hexo 遇到的三个小问题</span>
+                <span class="related-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/2026/10/29/hexo-generator/">
+                <time datetime="2026-10-29T12:10:00.000Z">10.29</time>
+                <span class="related-name">Hexo 生成器：一篇文章是怎么变成页面的</span>
+                <span class="related-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            
+          </ul>
+        </section>
+        
+      </div>
+
+      <aside class="post-side">
+        
+        <div class="toc" id="toc" hidden>
+          <p class="toc-title">目录</p>
+          <nav class="toc-nav" id="toc-nav" aria-label="文章目录"></nav>
+        </div>
+        
+        <a class="side-back" href="/"><span aria-hidden="true">←</span> 返回日志流</a>
+        
+        <a class="side-back" href="/categories/%E7%AB%99%E7%82%B9%E6%8C%87%E5%8D%97/"><span aria-hidden="true">←</span> 站点指南</a>
+        
+      </aside>
+    </div>
+  </div>
+</article>
+
+  </main>
+  
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-about">
+        <p class="footer-brand">
+          
+          <img class="footer-mark footer-mark--image" src="/img/logo.jpg" alt="" width="26" height="26">
+          
+          溪河里
+        </p>
+        <p class="footer-note">一座持续施工的个人档案馆。</p>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-title">浏览</h2>
+        <ul class="footer-links">
+          
+          <li><a href="/">日志流</a></li>
+          
+          <li><a href="/categories/">分类</a></li>
+          
+          <li><a href="/tags/">标签</a></li>
+          
+          <li><a href="/archives/">归档</a></li>
+          
+          <li><a href="/about/">关于</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-title">统计</h2>
+        <ul class="footer-stats">
+          <li><b>9</b> 篇记录</li>
+          <li><b>6</b> 个分类</li>
+          <li><b>16</b> 个标签</li>
+        </ul>
+        <p class="footer-build">生成于 <time datetime="2026-11-10T23:38:08">2026-11-10 23:38</time></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025–2026 rxzhou · 保留所有权利</p>
+      <p>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 · 主题 <span class="footer-theme">Chronicle</span></p>
+    </div>
+  </div>
+</footer>
+
+  <div class="search-modal" id="search-modal" hidden data-limit="24">
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="搜索记录">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.6 16.6 4.2 4.2"/></svg>
+      <input id="search-input" type="search" placeholder="搜索标题、正文、分类或标签…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="搜索关键词">
+      <button class="search-esc" id="search-close" type="button" aria-label="关闭搜索">Esc</button>
+    </div>
+    <div class="search-body">
+      <p class="search-hint" id="search-hint">输入关键词开始搜索</p>
+      <ul class="search-results" id="search-results"></ul>
+      <p class="search-empty" id="search-empty" hidden>没有找到相关记录，换个关键词试试。</p>
+    </div>
+    <div class="search-foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> 选择</span>
+      <span><kbd>Enter</kbd> 打开</span>
+      <span><kbd>Esc</kbd> 关闭</span>
+    </div>
+  </div>
+</div>
+
+  <button id="to-top" class="to-top" type="button" aria-label="回到顶部" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </button>
+  <script>window.SITE_ROOT = "/";</script>
+  <script src="/js/app.js" defer></script>
+</body>
+</html>

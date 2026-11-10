@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f7f3ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#131110" media="(prefers-color-scheme: dark)">
+  <title>Windows 上跑 Hexo 遇到的三个小问题 · 溪河里</title>
+  <meta name="description" content="npm.ps1 被安全策略挡住、时区拼错导致日期错乱、分页关不掉。三个都是小问题，但每个都能让人卡十分钟。">
+  <meta name="author" content="rxzhou">
+  <link rel="canonical" href="https://xiheli.github.io/2026/10/30/windows-hexo/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Windows 上跑 Hexo 遇到的三个小问题 · 溪河里">
+  <meta property="og:description" content="npm.ps1 被安全策略挡住、时区拼错导致日期错乱、分页关不掉。三个都是小问题，但每个都能让人卡十分钟。">
+  <meta property="og:url" content="https://xiheli.github.io/2026/10/30/windows-hexo/">
+  <meta property="og:site_name" content="溪河里">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png?v=3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png?v=3">
+  <script>
+    (function () {
+      try {
+        var key = 'chronicle-theme';
+        var stored = null;
+        try { stored = localStorage.getItem(key); } catch (e) { stored = null; }
+        var match = /[?&]theme=(dark|light)/.exec(location.search);
+        var theme = (match && match[1]) || stored;
+        if (!theme) {
+          theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body class="is-post">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="masthead" id="masthead">
+  <div class="wrap masthead-inner">
+    <a class="brand" href="/" aria-label="溪河里 首页">
+      
+      <img class="brand-mark brand-mark--image" src="/img/logo.jpg" alt="" width="36" height="36">
+      
+      <span class="brand-text">
+        <span class="brand-name">溪河里</span>
+        <span class="brand-tag">记录 · 思考 · 复盘</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      
+      <a class="nav-link is-active" href="/" aria-current="page">日志流</a>
+      
+      <a class="nav-link" href="/categories/">分类</a>
+      
+      <a class="nav-link" href="/tags/">标签</a>
+      
+      <a class="nav-link" href="/archives/">归档</a>
+      
+      <a class="nav-link" href="/about/">关于</a>
+      
+    </nav>
+
+    <div class="masthead-actions">
+      
+      <button class="search-trigger" id="search-open" type="button" aria-label="搜索记录" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.6 16.6 4.2 4.2"/></svg>
+        <span class="search-trigger-text">搜索</span>
+        <kbd class="search-trigger-kbd">Ctrl K</kbd>
+      </button>
+      
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="切换深浅色模式" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2Z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <main id="main">
+    
+<div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+
+<article class="post">
+  <header class="post-head">
+    <div class="wrap">
+      <nav class="post-crumb" aria-label="面包屑">
+        <a href="/">日志流</a>
+        
+        <span aria-hidden="true">/</span>
+        <a href="/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%95%88%E7%8E%87/">工具与效率</a>
+        
+        
+      </nav>
+
+      <div class="post-kicker">
+        
+        <a class="cat-badge" href="/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%95%88%E7%8E%87/" style="--c:#2b5f8f;--c-d:#93c8f2;--c-bg:rgba(43, 95, 143, 0.1);--c-bg-d:rgba(147, 200, 242, 0.16)"><span class="cat-dot" aria-hidden="true"></span>工具与效率</a>
+        
+        
+      </div>
+
+      <h1 class="post-title">Windows 上跑 Hexo 遇到的三个小问题</h1>
+      <p class="post-lede">npm.ps1 被安全策略挡住、时区拼错导致日期错乱、分页关不掉。三个都是小问题，但每个都能让人卡十分钟。</p>
+
+      <div class="post-meta">
+        <time datetime="2026-10-30T14:05:00.000Z">2026-10-30 · 周五</time>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span>约 1 分钟</span>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span>390 字</span>
+        
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="post-layout">
+      <div class="post-main">
+        <div class="post-content" id="post-content">
+          <p>在 Windows 上重新初始化博客时踩了三个坑，记一下，省得下次再查。</p>
+<h2 id="一、npm-无法加载文件-npm-ps1"><a href="#一、npm-无法加载文件-npm-ps1" class="headerlink" title="一、npm : 无法加载文件 npm.ps1"></a>一、<code>npm : 无法加载文件 npm.ps1</code></h2><p>PowerShell 默认的执行策略会禁止运行 <code>.ps1</code> 脚本，于是 <code>npm</code>、<code>npx</code> 全都报错：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm : 无法加载文件 C:\Program Files\nodejs\npm.ps1，因为在此系统上禁止运行脚本。</span><br></pre></td></tr></table></figure>
+
+<p>两种解法，任选其一：</p>
+<ul>
+<li>临时用 <code>npm.cmd</code> &#x2F; <code>npx.cmd</code> 代替，最省事；</li>
+<li>或者给当前用户放开执行策略：</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> <span class="literal">-Scope</span> CurrentUser RemoteSigned</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、时区写错，日期整体偏移"><a href="#二、时区写错，日期整体偏移" class="headerlink" title="二、时区写错，日期整体偏移"></a>二、时区写错，日期整体偏移</h2><p><code>_config.yml</code> 里时区是 <code>Asia/Shanghai</code>，我手滑写成了 <code>Asiz/Shanghai</code>。Hexo 不会报错，只会默默按无效时区处理，于是所有文章的日期都对不上。</p>
+<p>排查方法：随便打开一篇生成后的页面，看 <code>&lt;time&gt;</code> 里的时间和文章 <code>date</code> 是否一致。如果差了几个小时，先怀疑时区。</p>
+<blockquote>
+<p>结论：<strong>拼错的配置不会报错，只会让结果静默变错。</strong> 改完配置最好重新 <code>hexo clean &amp;&amp; hexo g</code> 再看一眼。</p>
+</blockquote>
+<h2 id="三、per-page-0-不只是「不分页」"><a href="#三、per-page-0-不只是「不分页」" class="headerlink" title="三、per_page: 0 不只是「不分页」"></a>三、<code>per_page: 0</code> 不只是「不分页」</h2><p>我原以为 <code>per_page: 0</code> 表示「用默认值」，实际上是「不做分片」。分页函数会把所有文章放进同一页，<code>total</code> 恒为 1。</p>
+<p>这对日志站是好事：首页拿到全量数据，筛选、搜索都能在前端做，不用考虑第二页。代价是文章多了以后首屏会变重，所以记录超过几百篇时记得改回一个具体数字。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">0</span>   <span class="comment"># 0 = 关闭分页，首页拿全量</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Windows + Hexo 的组合本身没问题，问题多半藏在「配置拼写」和「执行策略」这两类地方。遇到莫名其妙的报错，先怀疑环境，再怀疑代码。</p>
+
+        </div>
+
+        
+        <footer class="post-foot">
+          <p class="post-foot-label">标签</p>
+          <ul class="post-foot-tags">
+            
+            <li><a class="tag" href="/tags/Hexo/">#Hexo</a></li>
+            
+            <li><a class="tag" href="/tags/Windows/">#Windows</a></li>
+            
+            <li><a class="tag" href="/tags/PowerShell/">#PowerShell</a></li>
+            
+          </ul>
+        </footer>
+        
+
+        
+        <nav class="post-nav" aria-label="上一篇与下一篇">
+          
+          <a class="post-nav-item" href="/2026/10/29/hexo-generator/" rel="prev">
+            <span class="post-nav-label"><span aria-hidden="true">←</span> 较早一篇</span>
+            <span class="post-nav-title">Hexo 生成器：一篇文章是怎么变成页面的</span>
+          </a>
+          
+          
+          <a class="post-nav-item post-nav-item--next" href="/2026/11/07/css-grid/" rel="next">
+            <span class="post-nav-label">较晚一篇 <span aria-hidden="true">→</span></span>
+            <span class="post-nav-title">CSS Grid 的 auto-fill 与 auto-fit，到底差在哪</span>
+          </a>
+          
+        </nav>
+        
+
+        
+        <section class="related">
+          <h2 class="related-title">相关记录</h2>
+          <ul class="related-list">
+            
+            <li>
+              <a href="/2026/11/08/guide/">
+                <time datetime="2026-11-08T14:30:00.000Z">11.08</time>
+                <span class="related-name">使用说明：怎么写、怎么改、怎么发布</span>
+                <span class="related-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/2026/11/08/blog-timeline/">
+                <time datetime="2026-11-08T13:40:00.000Z">11.08</time>
+                <span class="related-name">重做博客：把首页换成一条时间轴</span>
+                <span class="related-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="/2026/10/29/hexo-generator/">
+                <time datetime="2026-10-29T12:10:00.000Z">10.29</time>
+                <span class="related-name">Hexo 生成器：一篇文章是怎么变成页面的</span>
+                <span class="related-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            
+          </ul>
+        </section>
+        
+      </div>
+
+      <aside class="post-side">
+        
+        <div class="toc" id="toc" hidden>
+          <p class="toc-title">目录</p>
+          <nav class="toc-nav" id="toc-nav" aria-label="文章目录"></nav>
+        </div>
+        
+        <a class="side-back" href="/"><span aria-hidden="true">←</span> 返回日志流</a>
+        
+        <a class="side-back" href="/categories/%E5%B7%A5%E5%85%B7%E4%B8%8E%E6%95%88%E7%8E%87/"><span aria-hidden="true">←</span> 工具与效率</a>
+        
+      </aside>
+    </div>
+  </div>
+</article>
+
+  </main>
+  
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-about">
+        <p class="footer-brand">
+          
+          <img class="footer-mark footer-mark--image" src="/img/logo.jpg" alt="" width="26" height="26">
+          
+          溪河里
+        </p>
+        <p class="footer-note">一座持续施工的个人档案馆。</p>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-title">浏览</h2>
+        <ul class="footer-links">
+          
+          <li><a href="/">日志流</a></li>
+          
+          <li><a href="/categories/">分类</a></li>
+          
+          <li><a href="/tags/">标签</a></li>
+          
+          <li><a href="/archives/">归档</a></li>
+          
+          <li><a href="/about/">关于</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h2 class="footer-title">统计</h2>
+        <ul class="footer-stats">
+          <li><b>9</b> 篇记录</li>
+          <li><b>6</b> 个分类</li>
+          <li><b>16</b> 个标签</li>
+        </ul>
+        <p class="footer-build">生成于 <time datetime="2026-11-10T23:38:08">2026-11-10 23:38</time></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025–2026 rxzhou · 保留所有权利</p>
+      <p>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 · 主题 <span class="footer-theme">Chronicle</span></p>
+    </div>
+  </div>
+</footer>
+
+  <div class="search-modal" id="search-modal" hidden data-limit="24">
+  <div class="search-backdrop" data-search-close></div>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="搜索记录">
+    <div class="search-field">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.6 16.6 4.2 4.2"/></svg>
+      <input id="search-input" type="search" placeholder="搜索标题、正文、分类或标签…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="搜索关键词">
+      <button class="search-esc" id="search-close" type="button" aria-label="关闭搜索">Esc</button>
+    </div>
+    <div class="search-body">
+      <p class="search-hint" id="search-hint">输入关键词开始搜索</p>
+      <ul class="search-results" id="search-results"></ul>
+      <p class="search-empty" id="search-empty" hidden>没有找到相关记录，换个关键词试试。</p>
+    </div>
+    <div class="search-foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> 选择</span>
+      <span><kbd>Enter</kbd> 打开</span>
+      <span><kbd>Esc</kbd> 关闭</span>
+    </div>
+  </div>
+</div>
+
+  <button id="to-top" class="to-top" type="button" aria-label="回到顶部" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </button>
+  <script>window.SITE_ROOT = "/";</script>
+  <script src="/js/app.js" defer></script>
+</body>
+</html>
